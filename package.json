@@ -1,0 +1,22 @@
+{
+  "name": "cmappax",
+  "title": "cmappax",
+  "version": "2.0.0",
+  "description": "cmappax editor by chuanve base on Vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cangshudada/cmappax.git"
+  },
+  "keywords": [
+    "cmappax"
+  ],
+  "author": "cangshudada (https://github.com/cangshudada/)",
+  "bugs": {
+    "url": "https://github.com/cangshudada/cmappax/issues"
+  },
+  "homepage": "https://github.com/cangshudada/cmappax#readme"
+}
