@@ -9,9 +9,9 @@
 
 
 
-> ### cmappax editor by chuanve base on Vue.
+> ### cmappax editor by chaunve base on Vue.
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/cangshudada/cmappax.svg?style=flat-square)](https://github.com/cangshudada/cmappax/releases) [![npm](https://img.shields.io/npm/v/cmappax.svg?style=flat-square)](https://www.npmjs.com/package/cmappax) [![GitHub file size in bytes](https://img.shields.io/github/size/cangshudada/cmappax/index.js?style=flat-square)](https://github.com/cangshudada/cmappax/tree/master)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/cangshudada/cmappax.svg?style=flat-square)](https://github.com/cangshudada/cmappax/releases) [![npm](https://img.shields.io/npm/v/cmappax.svg?style=flat-square)](https://www.npmjs.com/package/cmappax)
 
 
 
@@ -75,8 +75,9 @@ $ yarn add cmappax
 
 ```javascript
 import Vue from 'vue';
-import CmappaxEditor from 'cmappax';
+import App from "./app";
 import 'cmappax/cmappax.min.css';
+import CmappaxEditor from 'cmappax';
 
 Vue.use(CmappaxEditor);
 
@@ -102,8 +103,8 @@ new Vue({
 </template>
 
 <script>
-import CmappaxEditor from 'cmappax';
 import 'cmappax/cmappax.min.css';
+import CmappaxEditor from 'cmappax';
 export default {
  data(){
      return {
@@ -143,6 +144,8 @@ export default {
 
 
 ```typescript
+/** Partial代表所属接口中属性都为非必填 */
+
 /** Component size definition for CmappaxEditorGrid */
 declare type CmappaxComponentSize = "large" | "medium" | "small" | "mini";
 
@@ -160,7 +163,7 @@ declare interface IPentoolOptions {
   };
 }
 
-/** IOptions interface */
+/** IOptions interface 详细配置参数接口  */
 declare interface IOptions {
   /** PreView page url - 预览页链接 */
   preViewUrl: string;
@@ -248,7 +251,13 @@ declare interface IOptions {
 
 ### 操作说明
 
-#### 👉***[编辑器具体操作文档欢迎前往cmappax指南查看](https://www.cmappax.com/guide)***👈
+#### 👉[编辑器具体操作文档欢迎前往此处查看](https://www.cmappax.com/guide)👈
+
+
+
+### 更新日志
+
+#### 👉[编辑器具体更新日志欢迎前往此处查看](https://www.cmappax.com/log)👈
 
 
 
