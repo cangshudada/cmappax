@@ -53,7 +53,7 @@ declare interface IOptions {
   editNodeScale: number;
 
   /** Menu bar visible setting - 菜单栏显示配置 */
-  menuList: Pick<
+  menuList: Record<
     "FILE" | "OPER" | "SET" | "VIEW" | "MANAGE" | "LIBRARY" | "HELP",
     boolean
   >;
@@ -62,16 +62,16 @@ declare interface IOptions {
   saveGapTime: number;
 
   /** Polygon attribute configuration - 区块属性配置 */
-  polygonOptions: Partial<Pick<"fillColor" | "lockColor", number>>;
+  polygonOptions: Partial<Record<"fillColor" | "lockColor", number>>;
 
   /** curve attribute configuration - 弧形属性配置 */
   curveOptions: Partial<
-    Pick<"curveWidth" | "curveColor" | "controlSize" | "controlColor", number>
+    Record<"curveWidth" | "curveColor" | "controlSize" | "controlColor", number>
   >;
 
   /** path attribute configuration - 路径属性配置 */
   pathOptions: Partial<
-    Pick<
+    Record<
       | "nodeColor"
       | "pathWidth"
       | "pathColor"
@@ -85,16 +85,16 @@ declare interface IOptions {
   >;
 
   /** font attribute configuration - 文字属性配置 */
-  fontOptions: Partial<Pick<"fontSize" | "fontColor", number>>;
+  fontOptions: Partial<Record<"fontSize" | "fontColor", number>>;
 
   /** outline attribute configuration - outline属性配置 */
-  outlineOptions: Partial<Pick<"outlineWidth" | "outlineColor", number>>;
+  outlineOptions: Partial<Record<"outlineWidth" | "outlineColor", number>>;
 
   /** pentool attribute configuration - 钢笔工具属性配置 */
   pentoolOptions: Partial<IPentoolOptions>;
 
   /** pathGrid attribute configuration - 路径网格属性配置 */
-  gridOptions: Partial<Pick<"gridActiveColor" | "gridLimitColor", number>>;
+  gridOptions: Partial<Record<"gridActiveColor" | "gridLimitColor", number>>;
 }
 
 /** CmappaxEditor Component */
@@ -106,7 +106,7 @@ export declare class CmappaxEditor extends CmappaxComponent {
   interface: string;
 
   /** user info - 用户token */
-  user: Pick<"userId" | "name", string>;
+  user: Record<"userId" | "name", string>;
 
   /** buildingID - 建筑ID */
   building?: string | number;
