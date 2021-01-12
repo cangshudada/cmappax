@@ -9,17 +9,17 @@ declare class CmappaxComponent extends Vue {
 /** Component size definition for CmappaxEditorGrid */
 declare type CmappaxComponentSize = "large" | "medium" | "small" | "mini";
 
-/** Component size definition for button, input, etc */
+/** IPentoolOptions interface - 钢笔工具配置 */
 declare interface IPentoolOptions {
-  lineWidth: number;
+  lineWidth: number; //钢笔工具线宽
   controlStyle: {
-    size?: number;
-    fillColor?: number;
-    lineColor?: number;
+    size?: number; //钢笔控制点大小
+    fillColor?: number; //钢笔控制点填充色
+    lineColor?: number; //钢笔控制点线条颜色
   };
   curveStyle: {
-    fillColor?: number;
-    lineColor?: number;
+    fillColor?: number; //钢笔曲线填充色
+    lineColor?: number; //钢笔曲线线条色
   };
 }
 
@@ -40,9 +40,6 @@ declare interface IOptions {
   /** Stage border background color - 舞台边框颜色 */
   stageBorderColor: number;
 
-  /** Selected block edit point and zoom box color - 编辑点以及缩放框选中颜色 */
-  selectdPolygonColor: number;
-
   /** Point element radius - 点元素半径 */
   pointRad: number;
 
@@ -52,7 +49,7 @@ declare interface IOptions {
   /** Edit point and zoom box proportional zoom ratio - 编辑点以及缩放框等比缩放比例 */
   editNodeScale: number;
 
-  /** Menu bar visible setting - 菜单栏显示配置 */
+  /** Menu bar visible setting - 菜单栏显示配置（文件栏、操作栏、设置栏、视图栏、管理栏、库、帮助栏） */
   menuList: Record<
     "FILE" | "OPER" | "SET" | "VIEW" | "MANAGE" | "LIBRARY" | "HELP",
     boolean
@@ -62,7 +59,12 @@ declare interface IOptions {
   saveGapTime: number;
 
   /** Polygon attribute configuration - 区块属性配置 */
-  polygonOptions: Partial<Record<"fillColor" | "lockColor", number>>;
+  polygonOptions: Partial<
+    Record<
+      "fillColor" | "lockColor" | "activeColor" | "editPointActiveColor",
+      number
+    >
+  >;
 
   /** curve attribute configuration - 弧形属性配置 */
   curveOptions: Partial<
@@ -75,6 +77,7 @@ declare interface IOptions {
       | "nodeColor"
       | "pathWidth"
       | "pathColor"
+      | "pathBorderColor"
       | "selectColor"
       | "selPathColor"
       | "disabledPath"
@@ -116,4 +119,19 @@ export declare class CmappaxEditor extends CmappaxComponent {
 
   /** options params - 配置参数 */
   options?: Partial<IOptions>;
+
+  /**
+   * Cmappax editor initialization hook
+   */
+  initCompleted(): void;
+
+  /**
+   * Cmappax editor close hook
+   */
+  close(): void;
+
+  /**
+   * import cmp complete hook
+   */
+  cmpImportComplete(): void;
 }

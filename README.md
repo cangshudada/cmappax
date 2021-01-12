@@ -165,7 +165,7 @@ declare interface IPentoolOptions {
 
 /** IOptions interface 详细配置参数接口  */
 declare interface IOptions {
-  /** PreView page url - 预览页链接 */
+    /** PreView page url - 预览页链接 */
   preViewUrl: string;
 
   /** Path grid Size - 网格大小 */
@@ -179,9 +179,6 @@ declare interface IOptions {
 
   /** Stage border background color - 舞台边框颜色 */
   stageBorderColor: number;
-
-  /** Selected block edit point and zoom box color - 编辑点以及缩放框选中颜色 */
-  selectdPolygonColor: number;
 
   /** Point element radius - 点元素半径 */
   pointRad: number;
@@ -202,7 +199,12 @@ declare interface IOptions {
   saveGapTime: number;
 
   /** Polygon attribute configuration - 区块属性配置 */
-  polygonOptions: Partial<Record<"fillColor" | "lockColor", number>>;
+  polygonOptions: Partial<
+    Record<
+      "fillColor" | "lockColor" | "activeColor" | "editPointActiveColor",
+      number
+    >
+  >;
 
   /** curve attribute configuration - 弧形属性配置 */
   curveOptions: Partial<
@@ -215,6 +217,7 @@ declare interface IOptions {
       | "nodeColor"
       | "pathWidth"
       | "pathColor"
+      | "pathBorderColor"
       | "selectColor"
       | "selPathColor"
       | "disabledPath"
@@ -246,7 +249,7 @@ declare interface IOptions {
 | :-----------: | :----------------------: | :--------: | :--: |
 | initCompleted | 编辑器初始化完成钩子函数 | () => void |  -   |
 |     close     |    编辑器关闭钩子函数    | () => void |  -   |
-
+|     cmpImportComplete     |    编辑器导入cmp文件完成钩子函数 导入完成cmp文件之后buldingID会改变，此时需要在此钩子函数中重新获取新的buildingID,并重新传入cmappax    | () => void |  v2.0.2+   |
 
 
 ### 操作说明
