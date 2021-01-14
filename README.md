@@ -134,12 +134,12 @@ export default {
 
 |   参数    |              说明              |      类型      | 是否必须 | 版本 |
 | :-------: | :----------------------------: | :------------: | :----: | :--: |
-|    pid    |      *projectID - 项目ID*      | string\|number | 是 | 2.0.0 |
-| interface |       *interface - 接口*       |     string     | 是 | 2.0.0 |
-|   user    |    *user info - 用户token*     | Record<"userId"\|"name", string> | 是 | 2.0.0 |
-| building  |     *buildingID - 建筑ID*      | string\|number | 否 | 2.0.0 |
-| initFloor | *initFloorID - 初始显示楼层ID* | string\|number | 否 | 2.0.0 |
-|  options  |  *options params - 配置参数*   | Partial<IOptions> | 否 | 2.0.0 |
+|    pid    |      *projectID - 项目ID*      | string\|number | 是 | v2.0.0+ |
+| interface |       *interface - 接口*       |     string     | 是 | v2.0.0+ |
+|   user    |    *user info - 用户token*     | Record<"userId"\|"name", string> | 是 | v2.0.0+ |
+| building  |     *buildingID - 建筑ID*      | string\|number | 否 | v2.0.0+ |
+| initFloor | *initFloorID - 初始显示楼层ID* | string\|number | 否 | v2.0.0+ |
+|  options  |  *options params - 配置参数*   | Partial<IOptions> | 否 | v2.0.0+ |
 
 
 
@@ -247,8 +247,8 @@ declare interface IOptions {
 
 |     参数      |           说明           |    类型    | 版本 |
 | :-----------: | :----------------------: | :--------: | :--: |
-| initCompleted | 编辑器初始化完成钩子函数 | () => void |  -   |
-|     close     |    编辑器关闭钩子函数    | () => void |  -   |
+| initCompleted | 编辑器初始化完成钩子函数 | () => void |  v2.0.0+   |
+|     close     |    编辑器关闭钩子函数    | () => void |  v2.0.0+   |
 |     cmpImportComplete     |    编辑器导入cmp文件完成钩子函数 导入完成cmp文件之后buldingID会改变，此时需要在此钩子函数中重新获取新的buildingID,并重新传入cmappax    | () => void |  v2.0.2+   |
 
 
